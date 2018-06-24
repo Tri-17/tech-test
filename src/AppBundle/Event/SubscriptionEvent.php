@@ -6,8 +6,8 @@ use Symfony\Component\EventDispatcher\Event;
 use AppBundle\Entity\Subscriber;
 
 /**
- * The order.placed event is dispatched each time an order is created
- * in the system.
+ * Class SubscriptionEvent
+ * @package AppBundle\Event
  */
 class SubscriptionEvent extends Event
 {

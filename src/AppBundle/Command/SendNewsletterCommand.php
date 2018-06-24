@@ -11,8 +11,6 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class SendNewsletterCommand extends ContainerAwareCommand
 {
-
-
     protected function configure()
     {
         $this
@@ -40,7 +38,6 @@ class SendNewsletterCommand extends ContainerAwareCommand
 
         $newsletterPublisher = $this->getContainer()->get('AppBundle\Services\NewsletterPublisher');
         $newsletterPublisher->publish($newsletter);
-        // ...
 
         $output->writeln('Done');
     }

@@ -20,10 +20,7 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
-        // replace this example code with whatever you need
-        /*return $this->render('default/index.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
-        ]);*/
+
         return $this->redirectToRoute("form-subscribe");
     }
 
@@ -31,7 +28,7 @@ class DefaultController extends Controller
      * @Route("/subscribes", name="form-subscribe")
      * @Template("default/form-subscribe.html.twig")
      */
-    public function subscribeAction(Request $request, NewsletterPublisher $subscriberHandler, EventDispatcherInterface $eventDispatcher)
+    public function subscribeAction(Request $request, EventDispatcherInterface $eventDispatcher)
     {
         $form = $this->createForm(SubscribeType::class);
         $form->handleRequest($request);
@@ -48,7 +45,6 @@ class DefaultController extends Controller
         }
 
         return [
-            // 'newsletters' => $this->getDoctrine()->getRepository(Newsletter::class)->findAll(),
             'form' => $form->createView()
         ];
     }
