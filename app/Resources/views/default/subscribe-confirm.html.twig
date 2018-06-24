@@ -1,0 +1,7 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>You just subscribed !! </h1>
+    <p class="text-success">Thank you for subscribing. You will soon receive an email confirming your subscription</p>
+    <a class="btn btn-secondary" href="{{ path('form-subscribe') }}">Back to subscription</a>
+{% endblock %}
